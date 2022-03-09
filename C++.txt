@@ -61,9 +61,14 @@
 		"body": [
 			"#include <bits/stdc++.h>",
 			"#include <conio.h>",
+			"#include <windows.h>",
+			"#include <iostream>",
+			"#include <sys/stat.h>",
+			"#include <sys/types.h>",
 			"using namespace std;",
 			"int main()",
 			"{",
+			"\tSetConsoleTitle(\"    \");",
 			"\t$0",
 			"\n\tprintf(\"\\n\\n\\nthat's the end of the program. press any key to exit...\\n\\n\"); \n\tgetch();",
 			"\treturn 0;",
@@ -134,12 +139,6 @@
 		"prefix": "No",
 		"body": [
 			"cout<<\"No\"<<'\\n';"
-		]
-	},
-	"type cast to char constant": {
-		"prefix": "casttocharconstant",
-		"body": [
-			"reinterpret_cast<char *> ($0)"
 		]
 	},
 	"Select the full stl container": {
@@ -439,10 +438,34 @@
 			"1000000007"
 		]
 	},
-	"Read from file in c++":{
+	"Read from file C++":{
 		"prefix": "read from file",
 		"body" :[
 			"file_pointer.read((char*) &$1 , sizeof($1));"
+		]
+	},
+	"Read from file C++ while the end of the file":{
+		"prefix": "read untill the end",
+		"body" :[
+			"while(!file_pointer.eof()){",
+			"\tfile_pointer.read((char*) &$1 , sizeof($1));\n}"
+		]
+	},
+	"Write in the file C++":{
+		"prefix": "write in file",
+		"body" :[
+			"file_pointer.write((char*) &$1 , sizeof($1));"
+		]
+	},
+	"Create folder for my project":{
+		"prefix": "create_folder_for_project",
+		"body": [
+			"\tconst char* dirname = \"C:\\\\\\Users\\\\\\Public\\\\\\Documents\\\\\\TDsoftwares\\\\\";",
+			"\tif (mkdir(dirname) == -1){",
+			"\t\tif(errno != 17){",
+			"\t\t\tgxy(10 , 6) , printf(\"Mail teertha.deb579@gmail.com with the errorcode: \");cout<<errno;",
+			"\t\t}",
+			"\t}"
 		]
 	},
 }
